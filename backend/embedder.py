@@ -22,4 +22,5 @@ def get_top_k_chunks(text_chunks, question, k=1):
     top_k_indices = similarities.argsort()[-k:][::-1]
     
     top_chunks = [text_chunks[i] for i in top_k_indices]
-    return " ".join(top_chunks)
+    return top_chunks[0], top_k_indices[0]  # return best chunk and its index
+

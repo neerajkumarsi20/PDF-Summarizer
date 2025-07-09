@@ -38,9 +38,11 @@ async def ask_question(request: Request):
     model = data.get("model", "deepset/roberta-base-squad2")
     context = pdf_text_store.get("text", "")
     if not context:
-        return {"answer": "❌ No PDF uploaded yet."}
-    answer = answer_question(context, question, model)
-    return {"answer": answer}
+        return {"answer": "❌ No PDF uploaded yet.", "source": ""}
+    result = answer_question(context, question, model)
+    return result
+
+
 
 
 

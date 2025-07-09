@@ -37,8 +37,12 @@ if pdf_file:
                 json={"question": question, "model": "deepset/roberta-base-squad2"},
             )
             if response.status_code == 200:
-                st.success(response.json()["answer"])
+                res_json = response.json()
+                st.success(res_json["answer"])
+                st.markdown("**Source Context:**")
+                st.info(res_json["source"])
             else:
                 st.error("Failed to fetch answer.")
+
 
     
