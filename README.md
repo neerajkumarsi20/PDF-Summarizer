@@ -10,7 +10,7 @@ This is a full-stack AI-powered application that allows users to:
 
 Built with:
 - 🔥 FastAPI (backend)
-- ⚡ Streamlit (frontend)
+- ⚡ React (frontend)
 - 🤗 Hugging Face Inference API
 - 🧠 Sentence Transformers (for embeddings)
 - 📚 PyMuPDF (PDF parsing)
@@ -36,17 +36,30 @@ Built with:
 ## 🗂️ Directory Structure
 
 ```
-project/
-├── backend/
-│   ├── main.py              # FastAPI backend server
-│   ├── summarizer.py        # Hugging Face summarization logic
-│   ├── qa.py                # Q&A with embeddings + cosine similarity
-│   ├── embedder.py          # Embedding & similarity logic
-│   ├── .env                 # Hugging Face API key (hidden)
+PDF-Summarizer/
+│
+├── backend/                     # FastAPI backend
+│   ├── __pycache__/
+│   ├── embedder.py             # Embedding logic for PDF chunks
+│   ├── main.py                 # FastAPI app entry point
+│   ├── qa.py                   # Question-answering logic
+│   ├── summarizer.py           # Summarization logic
+│
 ├── frontend/
-│   ├── app.py               # Streamlit frontend
-├── requirements.txt         # Python dependencies
-├── .gitignore               # Excludes .env and other sensitive files
+│   └── pdf-ui-react/           # React frontend
+│       ├── public/             
+│       │   ├── index.html
+│       ├── src/                # React components and logic 
+│       ├── package.json
+│       ├── package-lock.json
+│       ├── .gitignore
+│       
+│
+├── requirements.txt            # Python dependencies
+├── LICENSE.txt
+├── .gitignore
+└── README.md                   # Project documentation
+
 ```
 
 ---
@@ -94,28 +107,16 @@ cd backend
 uvicorn main:app --reload
 ```
 
-### Step 2: Start the Streamlit frontend
+### Step 2: Start the React frontend
 
 ```bash
-cd frontend
-streamlit run app.py
+cd frontend/pdf-ui-react
+npm install
+npm start
 ```
 
 Now open `http://localhost:8501` to use the app.
 
 ---
 
-## 📌 Requirements
-
-See `requirements.txt`. Key libraries:
-
-- `fastapi`
-- `streamlit`
-- `requests`
-- `sentence-transformers`
-- `python-dotenv`
-- `PyMuPDF`
-- `uvicorn`
-
----
 

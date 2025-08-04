@@ -4,7 +4,6 @@ python-multipart
 python-dotenv
 PyMuPDF==1.22.5
 requests
-streamlit
 sentence-transformers
 scikit-learn
 numpy
