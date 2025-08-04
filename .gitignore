@@ -1,3 +1,45 @@
 backend/.env
 backend/_pycache_
 venv/
+
+# === PYTHON BACKEND ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.log
+.env
+venv/
+.env.*
+
+# pipenv/poetry/virtualenv
+Pipfile.lock
+poetry.lock
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE/Editor stuff
+.vscode/
+.idea/
+
+# === REACT FRONTEND ===
+frontend/pdf-ui-react/node_modules/
+frontend/pdf-ui-react/build/
+frontend/pdf-ui-react/.env
+frontend/pdf-ui-react/.DS_Store
+
+# === OS & Misc ===
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+*.tmp
+*.orig
+
+# === Others ===
+*.sqlite3
+*.db
+logs/
