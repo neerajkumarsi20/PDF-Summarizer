@@ -58,7 +58,3 @@ async def ask_question(request: Request):
     }
 
 
-
-
-
-
